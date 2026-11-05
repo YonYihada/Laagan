@@ -1,38 +1,37 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    width: 100%;
-    align-items: center;
+    min-height: 100vh;
     background: url('https://cataas.com/cat') no-repeat; /*kitty*/
     background-position: center;
     background-size: cover;
+    font-family: Arial, sans-serif;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    gap: 20px;
+    padding: 20px clamp(20px, 5vw, 50px);
     background: radial-gradient(circle 3400px at bottom right, #17183b, #7d7ee2);
 }
 
 .logo {
     color: #ff3366;
-    font-family: 'Arial';
     font-size: 40px;
     font-weight: bold;
-    padding: 0px;
 }
 
 .nav-links a {
     color: #a9bcd0;
     text-decoration: none;
-    margin-right: 20px;
+    margin-left: 20px;
     font-size: 18px;
-    font-family: 'Arial';
     font-weight: bold;
 }
 
@@ -41,13 +40,19 @@ body {
     font-style: italic;
 }
 
+.nav-links a:focus-visible,
+.options button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
 .container {
-    width: 880px;
-    height: 450px;
-    padding: 80px;
+    width: min(1040px, calc(100% - 32px));
+    min-height: 610px;
+    padding: 60px clamp(24px, 7.7vw, 80px);
     background: radial-gradient(circle 2400px at top left, #17183b, #7d7ee24B);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    margin: 75px auto;
+    margin: clamp(32px, 8vh, 75px) auto;
     border-radius: 15px;
     /*for stars*/
     position: relative;
@@ -81,22 +86,22 @@ body {
 
 .content {
     color: white;
-    padding: 50px;
-    padding-top: 100px;
+    padding: 100px 20px 50px;
     text-align: center;
-    font-size: 24px;
-    font-family: 'Arial';
+    font-size: clamp(18px, 2.4vw, 24px);
 }
 
 .content h1 {
     color: #ff3366;
-    font-size: 60px;
+    font-size: clamp(36px, 6vw, 60px);
     margin-bottom: 20px;
 }
 
 .options {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
     margin-top: 30px;
     padding: 20px;
 }
@@ -105,10 +110,9 @@ body {
     background: #ff3366;
     color: #fff;
     border: none;
-    padding: 20px 40px;
-    margin: 0 15px;
+    min-height: 48px;
+    padding: 14px 32px;
     font-size: 18px;
-    font-family: 'Arial';
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
@@ -121,4 +125,60 @@ body {
 .options button:hover {
     outline-offset: 3px;
     outline-color: white;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .nav-links a {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .container {
+        min-height: 0;
+        padding: 24px 16px;
+        margin: 24px auto;
+    }
+
+    .star.star1 {
+        top: -400px;
+        left: -300px;
+    }
+
+    .star.star2 {
+        top: 220px;
+        left: calc(100% - 120px);
+    }
+
+    .content {
+        padding: 64px 8px 24px;
+    }
+
+    .content h1 {
+        overflow-wrap: anywhere;
+    }
+
+    .options {
+        margin-top: 16px;
+        padding: 12px 0;
+    }
+
+    .options button {
+        flex: 1 1 140px;
+    }
 }
