@@ -6,7 +6,8 @@
 
 body {
     min-height: 100vh;
-    background: url('https://cataas.com/cat') no-repeat; /*kitty*/
+    background-image: url('../assets/images/cebucity2.png');
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     font-family: Arial, sans-serif;
@@ -63,6 +64,8 @@ body {
     font-size: 600px;
     position: absolute;
     color: #A9BCD0AA;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .star.star1 {
@@ -85,23 +88,27 @@ body {
 
 
 .content {
+    position: relative;
+    z-index: 1;
     color: white;
     padding: 100px 20px 50px;
     text-align: center;
     font-size: clamp(18px, 2.4vw, 24px);
 }
 
-.content h1 {
+.content h1 {   
     color: #ff3366;
-    font-size: clamp(36px, 6vw, 60px);
+    font-size: clamp(40px, 6vw, 60px);
     margin-bottom: 20px;
 }
 
 .options {
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 60px;
     margin-top: 30px;
     padding: 20px;
 }
@@ -110,12 +117,14 @@ body {
     background: #ff3366;
     color: #fff;
     border: none;
-    min-height: 48px;
+    min-height: 80px;
+    min-width: 180px;
     padding: 14px 32px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 7px;
+    font-size: clamp(20px, 2vw, 28px);
 
     outline: 3px solid #ff3366;
     outline-offset: -3px;
@@ -159,7 +168,7 @@ body {
     .container {
         min-height: 0;
         padding: 24px 16px;
-        margin: 24px auto;
+        margin: 38px auto;
     }
 
     .star.star1 {
