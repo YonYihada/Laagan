@@ -127,6 +127,13 @@ body {
     outline-color: white;
 }
 
+.options button:active {
+    outline-offset: 3px;
+    outline-color: #ff3366;
+    background: white;
+    color: #ff3366;
+}
+
 @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
@@ -156,14 +163,15 @@ body {
     }
 
     .star.star1 {
-        top: -400px;
-        left: -300px;
-        font-size: 250px;
+        top: -200px;
+        left: -100px;
+        font-size: 300px;
     }
 
     .star.star2 {
         top: 220px;
         left: calc(100% - 120px);
+        font-size: 300px;
     }
 
     .content {
