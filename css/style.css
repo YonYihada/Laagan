@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    align-items: center;
+    background: url('https://cataas.com/cat') no-repeat; /*kitty*/
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: radial-gradient(circle 3400px at bottom right, #17183b, #7d7ee2);
+}
+
+.logo {
+    color: #ff3366;
+    font-family: 'Arial';
+    font-size: 40px;
+    font-weight: bold;
+    padding: 0px;
+}
+
+.nav-links a {
+    color: #a9bcd0;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: 'Arial';
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ff3366;
+    font-style: italic;
+}
+
+.container {
+    width: 880px;
+    height: 450px;
+    padding: 80px;
+    background: radial-gradient(circle 2400px at top left, #17183b, #7d7ee24B);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin: 75px auto;
+    border-radius: 15px;
+    /*for stars*/
+    position: relative;
+    overflow: hidden;
+}
+
+.star {
+    font-size: 600px;
+    position: absolute;
+    color: #A9BCD0AA;
+}
+
+.star.star1 {
+    font-size: 600px;
+    top: -360px;
+    left: -210px;
+    position: absolute;
+    color: #A9BCD0AA;
+    transform: rotate(-45deg);
+}
+
+.star.star2 {
+    font-size: 600px;
+    top: 120px;
+    left: 720px;
+    position: absolute;
+    color: #A9BCD0AA;
+    transform: rotate(45deg);
+}
+
+
+.content {
+    color: white;
+    padding: 50px;
+    padding-top: 100px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Arial';
+}
+
+.content h1 {
+    color: #ff3366;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.options button {
+    background: #ff3366;
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    margin: 0 15px;
+    font-size: 18px;
+    font-family: 'Arial';
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+
+    outline: 3px solid #ff3366;
+    outline-offset: -3px;
+    transition: outline-offset 0.1s ease, outline-color 0.3s ease;
+}
+
+.options button:hover {
+    outline-offset: 3px;
+    outline-color: white;
+}
