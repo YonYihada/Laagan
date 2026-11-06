@@ -49,8 +49,8 @@ body {
 
 .container {
     width: min(1040px, calc(100% - 32px));
-    min-height: 610px;
-    padding: 60px clamp(24px, 7.7vw, 80px);
+    min-height: auto;
+    padding: 30px clamp(24px, 7.7vw, 80px) 60px; 
     background: radial-gradient(circle 2400px at top left, #17183b, #7d7ee24B);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     margin: clamp(32px, 8vh, 75px) auto;
@@ -64,8 +64,12 @@ body {
     font-size: 600px;
     position: absolute;
     color: #A9BCD0AA;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
+}
+
+#notfound .star {
+    color: #ff3366DD; 
 }
 
 .star.star1 {
@@ -73,7 +77,6 @@ body {
     top: -360px;
     left: -210px;
     position: absolute;
-    color: #A9BCD0AA;
     transform: rotate(-45deg);
 }
 
@@ -82,16 +85,14 @@ body {
     top: 120px;
     left: 720px;
     position: absolute;
-    color: #A9BCD0AA;
     transform: rotate(45deg);
 }
 
 
 .content {
     position: relative;
-    z-index: 1;
     color: white;
-    padding: 100px 20px 50px;
+     padding: 60px 20px 50px; 
     text-align: center;
     font-size: clamp(18px, 2.4vw, 24px);
 }
@@ -107,10 +108,13 @@ body {
     z-index: 1;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 10px;
     margin-top: 30px;
+    margin-bottom: 20px;
     padding: 20px;
+    align-items: center;
 }
 
 .options button {
@@ -141,6 +145,86 @@ body {
     outline-color: #ff3366;
     background: white;
     color: #ff3366;
+}
+
+.auth-options {
+    display: flex;
+    gap: 20px;
+    color: #a9bcd0;
+    margin-top: 10px;
+}
+
+.auth-options a {
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.auth-options a:visited {
+    color: #a9bcd0;
+}
+.auth-options a:hover,
+.auth-options a:focus-visible {
+    color: #ff3366;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #17183b;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.input-group { 
+    margin-bottom: 20px;
+}
+
+.input-group label { 
+    display: block;
+    margin-bottom: 8px;
+    color: #a9bcd0;
+    font-weight: bold;
+}
+
+.input-group input { 
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #eeeeee;
+    background: #eeeeee;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ff3366;
+    border-width: 2px;
+}
+
+.login-btn {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #a9bcd0, #5e62c2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ff9fb7, #ff3366);
 }
 
 @media (max-width: 600px) {
@@ -184,7 +268,7 @@ body {
     }
 
     .content {
-        padding: 64px 8px 24px;
+        padding: 15px 8px 24px;
     }
 
     .content h1 {

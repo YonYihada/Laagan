@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <div class="navbar">
         <div class="logo">Laagan</div>
         <div class="nav-links"> <!--not working yet-->
-            <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="info.html">Info</a>
             <a href="contact.html">Contact</a>
@@ -26,12 +25,15 @@
         <div class="content">
             <h1>Welcome to Laagan</h1>
             <p>This is the main page of the Laagan website. Explore our content and learn more about us.</p>
+            <div class="options"> <!--not working yet-->
+                <a href="../pages/notfound.html"><button id="findloc">Find Locations</button></a>
+                <div class="auth-options">
+                    <a href="../pages/login.html" id="logIn">Log In</a>
+                    <a href="../pages/notfound.html" id="SignUp">Sign Up</a>
+                </div>
+            </div>
         </div>
-        <div class="options"> <!--not working yet-->
-            <button id="LoginBtn">Login</button>
-            <button id="SignUp">Sign Up</button>
-        </div>
+
     </div>
 </body>
-
 </html>
