@@ -117,13 +117,14 @@ body {
     align-items: center;
 }
 
-.options button {
+.button-style {
     background: #ff3366;
     color: #fff;
     border: none;
-    min-height: 80px;
+    min-height: 36px;
     min-width: 180px;
-    padding: 14px 32px;
+    margin: 8px 0px 16px 0px;
+    padding: 10px 32px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
@@ -135,12 +136,23 @@ body {
     transition: outline-offset 0.1s ease, outline-color 0.3s ease;
 }
 
-.options button:hover {
+.options > a {
+    width: min(100%, 460px);
+}
+
+.options > a .button-style {
+    width: 100%;
+    min-height: clamp(72px, 10vw, 96px);
+    padding: clamp(16px, 2vw, 24px) clamp(24px, 4vw, 40px);
+    font-size: clamp(24px, 3vw, 32px);
+}
+
+.button-style:hover {
     outline-offset: 3px;
     outline-color: white;
 }
 
-.options button:active {
+.button-style:active {
     outline-offset: 3px;
     outline-color: #ff3366;
     background: white;
@@ -149,24 +161,31 @@ body {
 
 .auth-options {
     display: flex;
-    gap: 20px;
-    color: #a9bcd0;
+    justify-content: space-between;
+    gap: 20px; 
     margin-top: 10px;
+}
+
+#notfound .auth-options {
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .auth-options a {
     cursor: pointer;
+    text-decoration: none;
+    color: #a9bcd088;
     font-size: 16px;
-    text-decoration: underline;
     font-weight: bold;
 }
 
 .auth-options a:visited {
-    color: #a9bcd0;
+    color: #a9bcd088;
 }
 .auth-options a:hover,
 .auth-options a:focus-visible {
     color: #ff3366;
+    text-decoration: underline;
 }
 
 .form-container {
@@ -177,11 +196,13 @@ body {
     background: #17183b;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
+    align-items: left;
 }
 
 .input-group { 
     margin-bottom: 20px;
+    text-align: left;
+    font-size: 16px;
 }
 
 .input-group label { 
@@ -206,25 +227,6 @@ body {
 .input-group input:focus {
     border-color: #ff3366;
     border-width: 2px;
-}
-
-.login-btn {
-    width: 40%;
-    display: block;
-    margin: 0 auto;
-    padding: 13px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #a9bcd0, #5e62c2);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.login-btn:hover {
-    background: linear-gradient(135deg, #ff9fb7, #ff3366);
 }
 
 @media (max-width: 600px) {
