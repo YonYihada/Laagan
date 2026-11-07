@@ -49,6 +49,7 @@ body {
     color: var(--color-muted);
     text-decoration: none;
     margin-left: 20px;
+    padding: 8px 12px;
     font-size: 18px;
     font-weight: bold;
 }
@@ -56,6 +57,12 @@ body {
 .nav-links a:hover {
     color: var(--color-primary);
     font-style: italic;
+}
+
+.nav-links a[aria-current="page"] {
+    color: var(--color-white);
+    background: linear-gradient(var(--color-primary), var(--color-primary)) left bottom / 100% 5px no-repeat;
+    border-radius: 0 0 5px 5px;
 }
 
 .nav-links a:focus-visible,
@@ -213,6 +220,13 @@ body {
     margin-top: 10px;
 }
 
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 #notfound .auth-options {
     justify-content: center;
     margin-top: 40px;
@@ -337,5 +351,9 @@ body {
         flex-direction: column;
         gap: 8px;
         margin-top: 16px;
+    }
+
+    .options-centered {
+        align-items: center;
     }
 }
