@@ -1,3 +1,19 @@
+:root {
+    --color-primary: #ff3366;
+    --color-navy: #17183b;
+    --color-purple: #7d7ee2;
+    --color-purple-transparent: #7d7ee24B;
+    --color-muted: #a9bcd0;
+    --color-muted-transparent: #a9bcd088;
+    --color-muted-star: #A9BCD0AA;
+    --color-primary-star: #ff3366DD;
+    --color-white: #fff;
+    --color-input-background: #eeeeee;
+    --color-input-border: #eeeeee;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-shadow-subtle: rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,17 +35,18 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px clamp(20px, 5vw, 50px);
-    background: radial-gradient(circle 3400px at bottom right, #17183b, #7d7ee2);
+    background: radial-gradient(circle 3400px at bottom right, var(--color-navy), var(--color-purple));
 }
 
 .logo {
-    color: #ff3366;
+    color: var(--color-primary);
     font-size: 40px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .nav-links a {
-    color: #a9bcd0;
+    color: var(--color-muted);
     text-decoration: none;
     margin-left: 20px;
     font-size: 18px;
@@ -37,13 +54,13 @@ body {
 }
 
 .nav-links a:hover {
-    color: #ff3366;
+    color: var(--color-primary);
     font-style: italic;
 }
 
 .nav-links a:focus-visible,
 .options button:focus-visible {
-    outline: 3px solid white;
+    outline: 3px solid var(--color-white);
     outline-offset: 3px;
 }
 
@@ -51,8 +68,8 @@ body {
     width: min(1040px, calc(100% - 32px));
     min-height: auto;
     padding: 30px clamp(24px, 7.7vw, 80px) 60px; 
-    background: radial-gradient(circle 2400px at top left, #17183b, #7d7ee24B);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(circle 2400px at top left, var(--color-navy), var(--color-purple-transparent));
+    box-shadow: 0 15px 35px var(--color-shadow);
     margin: clamp(32px, 8vh, 75px) auto;
     border-radius: 15px;
     /*for stars*/
@@ -63,13 +80,13 @@ body {
 .star {
     font-size: 600px;
     position: absolute;
-    color: #A9BCD0AA;
+    color: var(--color-muted-star);
     z-index: -1;
     pointer-events: none;
 }
 
 #notfound .star {
-    color: #ff3366DD; 
+    color: var(--color-primary-star);
 }
 
 .star.star1 {
@@ -91,16 +108,46 @@ body {
 
 .content {
     position: relative;
-    color: white;
+    color: var(--color-white);
      padding: 60px 20px 50px; 
     text-align: center;
     font-size: clamp(18px, 2.4vw, 24px);
 }
 
+.message {
+    color: var(--color-muted-transparent);
+    font-size: clamp(16px, 2vw, 18px);
+    font-family: Arial;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .content h1 {   
-    color: #ff3366;
+    color: var(--color-primary);
     font-size: clamp(40px, 6vw, 60px);
     margin-bottom: 20px;
+}
+
+.info-content {
+    text-align: left;
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-copy {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 1.7;
+}
+
+.info-copy p {
+    margin-bottom: 24px;
 }
 
 .options {
@@ -118,8 +165,8 @@ body {
 }
 
 .button-style {
-    background: #ff3366;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-white);
     border: none;
     min-height: 36px;
     min-width: 180px;
@@ -131,7 +178,7 @@ body {
     border-radius: 7px;
     font-size: clamp(20px, 2vw, 28px);
 
-    outline: 3px solid #ff3366;
+    outline: 3px solid var(--color-primary);
     outline-offset: -3px;
     transition: outline-offset 0.1s ease, outline-color 0.3s ease;
 }
@@ -149,14 +196,14 @@ body {
 
 .button-style:hover {
     outline-offset: 3px;
-    outline-color: white;
+    outline-color: var(--color-white);
 }
 
 .button-style:active {
     outline-offset: 3px;
-    outline-color: #ff3366;
-    background: white;
-    color: #ff3366;
+    outline-color: var(--color-primary);
+    background: var(--color-white);
+    color: var(--color-primary);
 }
 
 .auth-options {
@@ -174,28 +221,28 @@ body {
 .auth-options a {
     cursor: pointer;
     text-decoration: none;
-    color: #a9bcd088;
-    font-size: 16px;
+    color: var(--color-muted-transparent);
+    font-size: 14px;
     font-weight: bold;
 }
 
 .auth-options a:visited {
-    color: #a9bcd088;
+    color: var(--color-muted-transparent);
 }
 .auth-options a:hover,
 .auth-options a:focus-visible {
-    color: #ff3366;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
 .form-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
     padding: 20px;
-    background: #17183b;
+    background: var(--color-navy);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--color-shadow-subtle);
     align-items: left;
 }
 
@@ -208,15 +255,15 @@ body {
 .input-group label { 
     display: block;
     margin-bottom: 8px;
-    color: #a9bcd0;
+    color: var(--color-muted);
     font-weight: bold;
 }
 
 .input-group input { 
     width: 100%;
     padding: 13px;
-    border: 1px solid #eeeeee;
-    background: #eeeeee;
+    border: 1px solid var(--color-input-border);
+    background: var(--color-input-background);
     border-radius: 8px;
     outline: none;
     font-size: 15px;
@@ -225,7 +272,7 @@ body {
 }
 
 .input-group input:focus {
-    border-color: #ff3366;
+    border-color: var(--color-primary);
     border-width: 2px;
 }
 
@@ -284,5 +331,11 @@ body {
 
     .options button {
         flex: 1 1 140px;
+    }
+
+    .auth-options {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
     }
 }
