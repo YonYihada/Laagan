@@ -302,9 +302,19 @@ body {
     margin-bottom: 20px;
 }
 
+.message .highlight {
+    color: var(--accent);
+}
+
 .content h1 {   
     color: var(--accent);
     font-size: clamp(40px, 6vw, 60px);
+    margin-bottom: 20px;
+}
+
+.content h2 {   
+    color: var(--color2);
+    font-size: clamp(24px, 4vw, 40px);
     margin-bottom: 20px;
 }
 
@@ -464,13 +474,24 @@ body {
 }
 
 @media (max-width: 600px) {
+    .map-page {
+        height: 100svh;
+        overflow: hidden;
+    }
+
+    .map-page .navbar {
+        height: 54px;
+        gap: 8px;
+        padding: 6px 10px;
+    }
+
     .map-layout {
         grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: minmax(320px, 60svh) auto;
-        height: auto;
+        grid-template-rows: minmax(0, 1fr) auto;
+        height: calc(100svh - 54px);
         min-height: 0;
-        gap: 14px;
-        padding: 14px;
+        gap: 10px;
+        padding: 10px;
     }
 
     .map-canvas {
@@ -483,29 +504,54 @@ body {
     }
 
     .location-list {
-        max-height: 260px;
-        padding: 16px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        min-height: 0;
+        max-height: 30svh;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .location-list h1,
+    .map-help {
+        grid-column: 1 / -1;
+    }
+
+    .location-list h1 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .map-help {
+        font-size: 12px;
+    }
+
+    .location-option {
+        padding: 8px;
+        font-size: 13px;
     }
 
     .navbar {
-        flex-direction: column;
-        padding: 16px;
+        flex-direction: row;
     }
 
     .logo {
-        font-size: 34px;
+        font-size: 26px;
     }
 
     .nav-links {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
-        gap: 12px 20px;
+        gap: 0;
     }
 
     .nav-links a {
         margin: 0;
-        font-size: 16px;
+        padding: 6px 4px;
+        font-size: 12px;
+        white-space: nowrap;
     }
 
     .container {
